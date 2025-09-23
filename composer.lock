@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a7e9dc4faab2ec3c6a9483b7f9c7a5cf",
+    "content-hash": "08219b6ebbd0ee18ca0ee723ad11bb11",
     "packages": [
         {
             "name": "jugid/staurie",
@@ -127,5 +127,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.6.0"
 }
