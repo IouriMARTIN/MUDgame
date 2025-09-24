@@ -7,7 +7,7 @@ use Jugid\Staurie\Game\Npc;
 class MisterAndy extends Npc {
 
     public function name(): string {
-        return 'Mister Andy';
+        return 'MisterAndy';
     }
 
     public function description(): string {
