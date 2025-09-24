@@ -33,5 +33,6 @@ class Map02 extends Blueprint {
     {
         return $this->position;
     }
+    
 
 }

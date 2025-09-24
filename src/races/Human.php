@@ -11,14 +11,14 @@ class Human extends AbstractRace {
     }
 
     public function description(): string {
-        return 'A versatile and balanced race.';
+        return 'Le dernier humain survivant dans ce monde post-apocalyptique.';
     }
 
     public function statistics(): array {
         return [
-            'Health' => 100,
-            'Strength' => 10,
-            'Defense' => 5
+            'Health' => 50,
+            'Attack' => 1,
+            'Defense' => 0
         ];
     }
 }
