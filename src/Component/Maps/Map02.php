@@ -1,39 +1,38 @@
 <?php
 
-namespace Matis\MuDgame\Maps;
+namespace Matis\MuDgame\Component\Maps;
 use Jugid\Staurie\Component\Map\Blueprint;
 use Jugid\Staurie\Game\Position\Position;
-use Matis\MuDgame\Npcs\MisterAndy;
+use Matis\MuDgame\Component\Monsters\MoleRat;
 
-class Map01 extends Blueprint {
+class Map02 extends Blueprint {
 
   private Position $position;
   public function __construct()
     {
-        $this->position = new Position(0,0);
+        $this->position = new Position(0,1);
     }
  public function npcs(): array {
-  return [MisterAndy::class];
+  return [];
   }
  public function items(): array {
   return [];
  }
  public function monsters(): array {
-  return [];
+  return [new MoleRat()];
  }
  public function name(): string {
-   return 'Bunker Abandonné';
+   return 'Terres Désolées';
  }
 
  public function description(): string {
-   return 'Vous vous réveillez sans vêtements de votre longue cryogénisation, dans un bunker abandonné. Un robot s\'adresse à vous.';
+   return 'Vous venez de parcourir plusieurs kilomètres, au loin vous apercevez une ville, en vous précipitant vous trébuchez sur un enfant mort. Vous perdez 49 PV. Un rataupe vous a vu de loin.';
  }
 
   public function position(): Position
     {
         return $this->position;
     }
+    
 
 }
-
-?>

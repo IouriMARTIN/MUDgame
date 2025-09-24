@@ -1,9 +1,9 @@
 <?php
 
-namespace Matis\MuDgame\Maps;
+namespace Matis\MuDgame\Component\Maps;
 use Jugid\Staurie\Component\Map\Blueprint;
 use Jugid\Staurie\Game\Position\Position;
-use Matis\MuDgame\Monsters\Flayer;
+use Matis\MuDgame\Component\Monsters\Flayer;
 
 class Map05 extends Blueprint {
 
@@ -19,7 +19,7 @@ class Map05 extends Blueprint {
   return [];
  }
  public function monsters(): array {
-  return [Flayer::class];
+  return [new Flayer()];
  }
  public function name(): string {
    return 'Antre de l\'Ecorcheur';

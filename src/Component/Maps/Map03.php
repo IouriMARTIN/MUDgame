@@ -1,16 +1,15 @@
 <?php
 
-namespace Matis\MuDgame\Maps;
+namespace Matis\MuDgame\Component\Maps;
 use Jugid\Staurie\Component\Map\Blueprint;
 use Jugid\Staurie\Game\Position\Position;
-use Matis\MuDgame\Monsters\RadCockroach;
 
-class Map04 extends Blueprint {
+class Map03 extends Blueprint {
 
   private Position $position;
   public function __construct()
     {
-        $this->position = new Position(-1,1);
+        $this->position = new Position(1,1);
     }
  public function npcs(): array {
   return [];
@@ -19,14 +18,14 @@ class Map04 extends Blueprint {
   return [];
  }
  public function monsters(): array {
-  return [RadCockroach::class];
+  return [];
  }
  public function name(): string {
-   return 'Nid de RadCafards';
+   return 'Camp de Marchands';
  }
 
  public function description(): string {
-   return 'Vous entrez dans un nid de cafards radioactifs. Un énorme RadCafard vous attaque!';
+   return 'Vous arrivez dans un camp de marchands. Un marchand vous propose un stimpak pour 50 PO.';
  }
 
   public function position(): Position

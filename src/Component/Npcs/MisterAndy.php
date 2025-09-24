@@ -1,6 +1,6 @@
 <?php
 
-namespace Matis\MuDgame\Npcs;
+namespace Matis\MuDgame\Component\Npcs;
 
 use Jugid\Staurie\Game\Npc;
 

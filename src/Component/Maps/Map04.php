@@ -1,16 +1,16 @@
 <?php
 
-namespace Matis\MuDgame\Maps;
+namespace Matis\MuDgame\Component\Maps;
 use Jugid\Staurie\Component\Map\Blueprint;
 use Jugid\Staurie\Game\Position\Position;
-use Matis\MuDgame\Monsters\MoleRat;
+use Matis\MuDgame\Component\Monsters\RadCockroach;
 
-class Map02 extends Blueprint {
+class Map04 extends Blueprint {
 
   private Position $position;
   public function __construct()
     {
-        $this->position = new Position(0,1);
+        $this->position = new Position(-1,1);
     }
  public function npcs(): array {
   return [];
@@ -19,20 +19,19 @@ class Map02 extends Blueprint {
   return [];
  }
  public function monsters(): array {
-  return [MoleRat::class];
+  return [new RadCockroach()];
  }
  public function name(): string {
-   return 'Terres Désolées';
+   return 'Nid de RadCafards';
  }
 
  public function description(): string {
-   return 'Vous venez de parcourir plusieurs kilomètres, au loin vous apercevez une ville, en vous précipitant vous trébuchez sur un enfant mort. Vous perdez 49 PV. Un rataupe vous a vu de loin.';
+   return 'Vous entrez dans un nid de cafards radioactifs. Un énorme RadCafard vous attaque!';
  }
 
   public function position(): Position
     {
         return $this->position;
     }
-    
 
 }

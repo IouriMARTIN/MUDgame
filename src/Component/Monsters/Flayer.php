@@ -1,6 +1,6 @@
 <?php
 
-namespace Matis\MuDgame\Monsters;
+namespace Matis\MuDgame\Component\Monsters;
 
 use Jugid\Staurie\Game\Monster;
 

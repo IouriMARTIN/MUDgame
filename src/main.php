@@ -6,9 +6,8 @@ use Jugid\Staurie\Component\Menu\Menu;
 use Jugid\Staurie\Component\PrettyPrinter\PrettyPrinter;
 use Jugid\Staurie\Component\Introduction\Introduction;
 use Jugid\Staurie\Component\Map\Map;
-use Jugid\Staurie\Component\Character\MainCharacter;
-use Jugid\Staurie\Component\Race\Race;
-use Matis\MuDgame\Races\Human;
+use Jugid\Staurie\Component\Character\Statistics;
+use Matis\MuDgame\Component\Player\Player;
 
 
 require_once __DIR__.'/../vendor/autoload.php';
@@ -16,11 +15,11 @@ $staurie = new Staurie('RPG Post-Apocalyptique');
 $staurie->register([
     Console::class,
     PrettyPrinter::class,
-    Menu::class,
-    Race::class
+    Menu::class
 ]);
 
 $container = $staurie->getContainer();
+
 
 $menu = $container->registerComponent(Menu::class);
 $menu->configuration([
@@ -44,27 +43,34 @@ $introduction->configuration([
 
 $map = $container->registerComponent(Map::class);
 $map->configuration([
-    'directory' => __DIR__ . '/Maps', 
-    'namespace' => 'Matis\MuDgame\Maps',
+    'directory' => __DIR__ . '/Component/Maps', 
+    'namespace' => 'Matis\MuDgame\Component\Maps',
     'navigation' => true,
     'map_enable' => true,
     'compass_enable' => true
 ]);
 
 
-$character = $container->registerComponent(MainCharacter::class);
+$character = $container->registerComponent(Player::class);
 $character->configuration([
+    'name' => 'Mark',
+    'gender' => 'Male',
+    'statistics' => (new Statistics())
+        ->add('Health', 100)
+        ->add('Attack', 1)
+        ->add('Defense', 0),
+    'equipment' => [
+        'head' => null,
+        'hand' => null,
+        'shield' => null,
+        'feet' => null,
+        'shoulders' => null,
+    ],
     'ask_name' => false,
     'ask_gender' => false,
     'character_has_name' => true,
-    'character_has_gender' => false,
-    'default_name' => 'Mark'
+    'character_has_gender' => true
 ]);
 
-$race = $container->registerComponent(Race::class);
-$race->configuration([
-    'races' => [
-        Human::class
-    ]
-]);
 $staurie->run();
+
