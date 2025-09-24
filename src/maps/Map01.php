@@ -3,6 +3,7 @@
 namespace Matis\MuDgame\Maps;
 use Jugid\Staurie\Component\Map\Blueprint;
 use Jugid\Staurie\Game\Position\Position;
+use Jugid\Staurie\Example\Items\Excalibur;
 
 class Map01 extends Blueprint {
   
@@ -15,7 +16,7 @@ class Map01 extends Blueprint {
   return [];
   }
  public function items(): array { 
-  return [];
+  return [new Excalibur()];
  }
  public function monsters(): array { 
   return [];
