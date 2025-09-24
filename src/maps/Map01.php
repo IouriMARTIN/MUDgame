@@ -1,31 +1,32 @@
-<?php 
+<?php
 
 namespace Matis\MuDgame\Maps;
 use Jugid\Staurie\Component\Map\Blueprint;
 use Jugid\Staurie\Game\Position\Position;
+use Matis\MuDgame\Npcs\MisterAndy;
 
 class Map01 extends Blueprint {
-  
+
   private Position $position;
   public function __construct()
     {
         $this->position = new Position(0,0);
     }
  public function npcs(): array {
-  return [];
+  return [MisterAndy::class];
   }
- public function items(): array { 
+ public function items(): array {
   return [];
  }
- public function monsters(): array { 
+ public function monsters(): array {
   return [];
  }
- public function name(): string { 
-   return 'Test map Iouri';
+ public function name(): string {
+   return 'Bunker Abandonné';
  }
- 
- public function description(): string { 
-   return 'This is a test map';
+
+ public function description(): string {
+   return 'Vous vous réveillez sans vêtements de votre longue cryogénisation, dans un bunker abandonné. Un robot s\'adresse à vous.';
  }
 
   public function position(): Position
@@ -34,4 +35,5 @@ class Map01 extends Blueprint {
     }
 
 }
+
 ?>
