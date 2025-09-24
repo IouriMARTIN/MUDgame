@@ -54,7 +54,7 @@ $map->configuration([
 $character = $container->registerComponent(Player::class);
 $character->configuration([
     'name' => 'Mark',
-    'gender' => 'Male',
+    'gender' => 'Male', // ou '' si tu veux
     'statistics' => (new Statistics())
         ->add('Health', 100)
         ->add('Attack', 1)
